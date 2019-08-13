@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PassportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Official_Name" />
+      <PropertyRef Name="Continent" />
+      <PropertyRef Name="Capital" />
+      <PropertyRef Name="Largest_City" />
+      <PropertyRef Name="Most_Spoken_Language" />
+      <PropertyRef Name="Demonym" />
+      <PropertyRef Name="HoS_Title" />
+      <PropertyRef Name="HoS_Picture" />
+      <PropertyRef Name="Population" />
+      <PropertyRef Name="Currency" />
+      <PropertyRef Name="Anthem" />
+      <PropertyRef Name="AnthemHtml" />
+      <PropertyRef Name="Globe" />
+      <PropertyRef Name="Acceptables" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Official_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Continent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Capital" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Largest_City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Most_Spoken_Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Demonym" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoS_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Head_of_State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoS_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoG_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Head_of_Government" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HoG_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Population" Type="Double" Nullable="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Anthem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AnthemHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Globe" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Flag" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CoA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Acceptables" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PassportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="countries" EntityType="Self.country" />
+  </EntityContainer>
+</Schema>

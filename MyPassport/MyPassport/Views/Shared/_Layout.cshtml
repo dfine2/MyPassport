@@ -1,0 +1,105 @@
+﻿@using MyPassport.Models
+@using MyPassport.Controllers
+
+@{
+	var Countries = HomeController.FetchAll();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body >
+
+	<!-- Top Navbar -->
+	<div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<a class="navbar-brand" href="">MyPassport</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collpase navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a href="#">Account</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+
+	<!-- Side Navbar -->
+
+	<div class="btn-group-vertical">
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#AfricaListContainer">Africa</button>
+		<div id="AfricaListContainer" class="collapse">
+			<ul id="AfricaList">
+				@foreach (var country in Countries.Where(x => x.Continent == "Africa").OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#AsiaListContainer">Asia</button>
+		<div id="AsiaListContainer" class="collapse">
+			<ul id="AsiaList">
+				@foreach (var country in Countries.Where(x => x.Continent.Contains("Asia")).OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#EuropeListContainer">Europe</button>
+		<div id="EuropeListContainer" class="collapse">
+			<ul id="EuropeList">
+				@foreach (var country in Countries.Where(x => x.Continent.Contains("Europe")).OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#NorthAmericaListContainer">North America</button>
+		<div id="NorthAmericaListContainer" class="collapse">
+			<ul id="NorthAmericaList">
+				@foreach (var country in Countries.Where(x => x.Continent == "North America").OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#OceaniaListContainer">Oceania</button>
+		<div id="OceaniaListContainer" class="collapse">
+			<ul id="OceaniaList">
+				@foreach (var country in Countries.Where(x => x.Continent == "Oceania").OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#SouthAmericaListContainer">South America</button>
+		<div id="SouthAmericaListContainer" class="collapse">
+			<ul id="SouthAmericaList">
+				@foreach (var country in Countries.Where(x => x.Continent == "South America").OrderBy(x => x.Name))
+				{
+					<li><a href="@Url.Action("Country","Home",new { Name = country.Name })">@Html.Raw(country.Name)</a></li>
+				}
+			</ul>
+		</div>
+
+	</div>
+
+
+	<div class="container body-content">
+		@RenderBody()
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

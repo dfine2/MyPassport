@@ -1,0 +1,94 @@
+﻿@using MyPassport.Models
+@model country
+
+
+<div id="countryTitle">
+	<img id="CoA" src="@Model.CoA" alt="Coat of Arms of @Html.Raw(Model.Name)" />
+	<h2 class="text-center">@Html.Raw(Model.Name)</h2>
+</div>
+
+<div class="row">
+	<div class="col topRow" id="flagContainer">
+		<img class="topRowPics" id="flag" src="@Model.Flag" alt="Flag of @Html.Raw(Model.Name)" />
+	</div>
+	<div class="col topRow" id="globeContainer">
+		<img class="topRowPics" id="globe" src="@Model.Globe" alt="@Html.Raw(Model.Name)" />
+	</div>
+</div>
+<hr />
+<div class="row">
+	<div class="col midRow" id="dataContainer">
+		<table>
+			<tr>
+				<td>Official Name: </td>
+				<td>@Html.Raw(Model.Official_Name)</td>
+			</tr>
+			<tr>
+				<td>National Anthem: </td>
+				<td>@Html.Raw(Model.Anthem)</td>
+			</tr>
+				@if (Model.Name == "Equatorial Guinea" || Model.Name == "Kiribati" || Model.Name == "Libya" || Model.Name == "Nauru"
+				|| Model.Name == "Niger" || Model.Name == "Samoa" || Model.Name == "Solomon Islands" || Model.Name == "Suriname" || Model.Name == "Tuvalu")
+				{
+					<tr>
+						<td>
+							<iframe src="@($"/Resources/{Model.Name}.mp3")" height="70" autostart="0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</td>
+					</tr>
+				
+				}
+				else
+				{
+					<tr><td>@Html.Raw(Model.AnthemHtml)</td></tr>
+				}
+			</tr>
+
+
+
+			<tr>
+				<td>Demonym:</td>
+				<td>@Html.Raw(Model.Demonym)</td>
+			</tr>
+			<tr>
+				<td>Most Spoken Language:</td>
+				<td>@Html.Raw(Model.Most_Spoken_Language)</td>
+			</tr>
+			<tr>
+				<td>Population:</td>
+				<td>@Convert.ToDecimal(Model.Population).ToString("#,##0")</td>
+			</tr>
+			<tr>
+				<td>Currency:</td>
+				<td>@Html.Raw(Model.Currency)</td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="col midRow" id="leaderContainer">
+		<div class="row">
+			<div class="col">
+				<figure>
+					<img class="leaderPic midRowItem" src="@Model.HoS_Picture" alt="@Model.Head_of_State" />
+					<figcaption>@Html.Raw(Model.HoS_Title) @Html.Raw(Model.Head_of_State)</figcaption>
+				</figure>
+			</div>
+			@if (Model.Head_of_Government != null)
+			{
+				<div class="col">
+					<figure>
+						<img class="leaderPic midRowItem" src="@Model.HoG_Picture" alt="@Model.Head_of_Government" />
+						<figcaption>@Html.Raw(Model.HoG_Title)  @Html.Raw(Model.Head_of_Government)</figcaption>
+					</figure>
+				</div>
+			}
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+
+	</div>
+
+</div>
+
+
+

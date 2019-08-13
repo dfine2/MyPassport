@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CountriesModelStoreContainer" CdmEntityContainer="CountriesEntities">
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="CountriesModel.country">
+        <MappingFragment StoreEntitySet="countries">
+          <ScalarProperty Name="Name1" ColumnName="Name" />
+          <ScalarProperty Name="Official_Name" ColumnName="Official_Name" />
+          <ScalarProperty Name="Continent" ColumnName="Continent" />
+          <ScalarProperty Name="Capital" ColumnName="Capital" />
+          <ScalarProperty Name="Largest_City" ColumnName="Largest_City" />
+          <ScalarProperty Name="Most_Spoken_Language" ColumnName="Most_Spoken_Language" />
+          <ScalarProperty Name="Demonym" ColumnName="Demonym" />
+          <ScalarProperty Name="HoS_Title" ColumnName="HoS_Title" />
+          <ScalarProperty Name="Head_of_State" ColumnName="Head_of_State" />
+          <ScalarProperty Name="HoS_Picture" ColumnName="HoS_Picture" />
+          <ScalarProperty Name="HoG_Title" ColumnName="HoG_Title" />
+          <ScalarProperty Name="Head_of_Government" ColumnName="Head_of_Government" />
+          <ScalarProperty Name="HoG_Picture" ColumnName="HoG_Picture" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Anthem" ColumnName="Anthem" />
+          <ScalarProperty Name="AnthemHtml" ColumnName="AnthemHtml" />
+          <ScalarProperty Name="Globe" ColumnName="Globe" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="CoA" ColumnName="CoA" />
+          <ScalarProperty Name="Acceptables" ColumnName="Acceptables" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

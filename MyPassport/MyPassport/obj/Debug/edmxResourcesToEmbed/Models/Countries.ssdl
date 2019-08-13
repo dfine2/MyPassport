@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CountriesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Countries.dbo.countries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="countries">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Official_Name" />
+      <PropertyRef Name="Continent" />
+      <PropertyRef Name="Capital" />
+      <PropertyRef Name="Largest_City" />
+      <PropertyRef Name="Most_Spoken_Language" />
+      <PropertyRef Name="Demonym" />
+      <PropertyRef Name="HoS_Title" />
+      <PropertyRef Name="HoS_Picture" />
+      <PropertyRef Name="Population" />
+      <PropertyRef Name="Currency" />
+      <PropertyRef Name="Anthem" />
+      <PropertyRef Name="AnthemHtml" />
+      <PropertyRef Name="Globe" />
+      <PropertyRef Name="Acceptables" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Official_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Continent" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Capital" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Largest_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Most_Spoken_Language" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Demonym" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoS_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Head_of_State" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoS_Picture" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HoG_Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Head_of_Government" Type="nvarchar" MaxLength="200" />
+    <Property Name="HoG_Picture" Type="nvarchar(max)" />
+    <Property Name="Population" Type="float" Nullable="false" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anthem" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AnthemHtml" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Globe" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Flag" Type="nvarchar" MaxLength="200" />
+    <Property Name="CoA" Type="nvarchar" MaxLength="200" />
+    <Property Name="Acceptables" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CountriesModelStoreContainer">
+    <EntitySet Name="countries" EntityType="Self.countries" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [countries].[Name] AS [Name], 
+    [countries].[Official_Name] AS [Official_Name], 
+    [countries].[Continent] AS [Continent], 
+    [countries].[Capital] AS [Capital], 
+    [countries].[Largest_City] AS [Largest_City], 
+    [countries].[Most_Spoken_Language] AS [Most_Spoken_Language], 
+    [countries].[Demonym] AS [Demonym], 
+    [countries].[HoS_Title] AS [HoS_Title], 
+    [countries].[Head_of_State] AS [Head_of_State], 
+    [countries].[HoS_Picture] AS [HoS_Picture], 
+    [countries].[HoG_Title] AS [HoG_Title], 
+    [countries].[Head_of_Government] AS [Head_of_Government], 
+    [countries].[HoG_Picture] AS [HoG_Picture], 
+    [countries].[Population] AS [Population], 
+    [countries].[Currency] AS [Currency], 
+    [countries].[Anthem] AS [Anthem], 
+    [countries].[AnthemHtml] AS [AnthemHtml], 
+    [countries].[Globe] AS [Globe], 
+    [countries].[Flag] AS [Flag], 
+    [countries].[CoA] AS [CoA], 
+    [countries].[Acceptables] AS [Acceptables]
+    FROM [dbo].[countries] AS [countries]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,125 @@
+﻿$leftNavWidth: 200px;
+$bodyLeft: 10px;
+$bodyWidth: calc(100vw - (#{$leftNavWidth} + #{$bodyLeft}));
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	/*padding-right: 50px;*/
+	overflow-x: hidden;
+	background-color: #12d2ed;
+}
+
+
+.body-content {
+	padding-top: 25px;
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 50px;
+	padding-bottom: 25px;
+	float: right;
+	background-color: antiquewhite;
+	width: $bodyWidth;
+	position: relative;
+	left: $bodyLeft;
+	#countryTitle{
+
+		justify-content: center;
+		h2{
+			text-decoration: underline;
+		}
+		#CoA{
+			display: block;
+			margin: auto;
+			height: 100px;
+			width: auto;
+		}
+	}
+	.topRow, .topRowPics{
+		display: block;
+		margin: auto;
+	}
+	#flag{
+		width: 300px;
+		height: auto;
+		border: 2px solid black;
+
+	}
+	#globe{
+	
+	}
+
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+.btn-group-vertical{
+	width: $leftNavWidth;
+	border: 2px solid black;
+	position: absolute;
+	ul{
+		list-style: none;
+	}
+
+	button{
+		color: white; 
+	}
+	div{
+		background-color:Highlight;
+		width: 100%;
+		li{
+			color: white;
+		}
+	}
+}
+
+
+.navbar{
+	margin-bottom: 40px;
+}
+
+#leaderContainer{
+	$imgHeight: 300px;
+	$imgWidth: 200px;
+	padding-top: 20px;
+	figure{
+		display: inline;
+		width: calc(#{$imgWidth} + 10px);
+		img{
+			height: $imgHeight;
+			width: $imgWidth;
+			margin-bottom: 5px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+table{
+	border-spacing: 25px;
+	border-collapse: separate;
+}
+
+#homeImage{
+	width: 300px;
+	height: auto;
+	display: block;
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
